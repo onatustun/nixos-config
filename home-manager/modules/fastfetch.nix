@@ -29,7 +29,6 @@
 	"swap"
 	"disk"
 	"battery"
-	"localip"
         "break"
         "colors"
       ];

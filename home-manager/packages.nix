@@ -2,6 +2,8 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    tor-browser
+
     brightnessctl
 
     xdg-desktop-portal-gtk

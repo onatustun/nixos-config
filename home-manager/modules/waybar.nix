@@ -58,7 +58,7 @@
 	    critical = 15;
 	  };
 	  format = "[{icon} {capacity}% {time}]";
-	  format-plugged = "[ {capacity}% {time}]";
+	  format-charging = "[ {capacity}% {time}]";
 	  format-icons = [
 	    ""
 	    ""
@@ -70,7 +70,7 @@
 	};
 
         network = {
-	  format-wifi = "[  {essid} {signalStrength}%]";
+	  format-wifi = "[  {ifname}:{ipaddr}/{cidr} {essid} ({signalStrength}%)]";
 	  format-disconnected = "[Disconnected]";
           interval = 5;
 	  tooltip = false;
