@@ -5,7 +5,6 @@
     ./git.nix
     ./hypr
     ./oh-my-posh.nix
-    ./stylix.nix
     ./tmux.nix
     ./waybar.nix
     ./wlogout

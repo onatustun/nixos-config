@@ -14,6 +14,8 @@
 
     btop
     fzf
+    pywal
+    pywalfox-native
     tree
     wl-clipboard
     yazi
