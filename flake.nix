@@ -10,9 +10,11 @@
 		};
 
 		zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+		stylix.url = "github:danth/stylix";
 	};
 
-	outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs: let
+	outputs = { self, nixpkgs, home-manager, zen-browser, stylix, ... }@inputs: let
 			system = "x86_64-linux";
 		in {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

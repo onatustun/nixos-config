@@ -6,6 +6,7 @@
     ./input.nix
     ./locale.nix
     ./networking.nix
+    ./stylix.nix
     ./user.nix
   ];
 }
