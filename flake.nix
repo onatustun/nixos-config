@@ -29,7 +29,10 @@
 			extraSpecialArgs = {
 			  inherit inputs system;
 			};
-			modules = [ ./home-manager/home.nix ];
+			modules = [ 
+			  ./home-manager/home.nix
+			  stylix.homeManagerModules.stylix
+			];
 		};
 	};
 }
