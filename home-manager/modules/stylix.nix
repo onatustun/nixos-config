@@ -9,7 +9,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 
   stylix = {
@@ -20,15 +19,9 @@
     targets = {
       neovim.enable = false;
       waybar.enable = false;
-      wofi.enable = false;
+      rofi.enable = false;
       hyprland.enable = false;
       hyprlock.enable = false;
-    };
-
-    cursor = {
-      name = "DMZ-Black";
-      size = 24;
-      package = pkgs.vanilla-dmz;
     };
 
     fonts = {
