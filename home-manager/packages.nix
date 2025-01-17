@@ -18,7 +18,6 @@
     pywalfox-native
     tree
     wl-clipboard
-    yazi
     zoxide
 
     dunst

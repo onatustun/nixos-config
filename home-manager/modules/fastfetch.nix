@@ -14,22 +14,20 @@
 
       modules = [
         "title"
-        "break"
         "os"
         "host"
+	"bios"
         "kernel"
         "uptime"
 	"packages"
-	"shell"
-        "display"
-        "wm"
 	"cpu"
-	"gpu"
-	"memory"
 	"swap"
 	"disk"
-	"battery"
-        "break"
+        "display"
+        "wm"
+	"brightness"
+	"shell"
+	"terminal"
         "colors"
       ];
     };

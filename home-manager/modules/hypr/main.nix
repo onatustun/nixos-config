@@ -18,23 +18,17 @@
 	"HYPRCURSOR_SIZE, 24"
       ];
 
-      monitor = ",2256x1504@60,0x0,1.175";
+      monitor = "eDP-1,2256x1504@60,0x0,1.175";
 
       "$terminal" = "ghostty";
       "$menu" = "rofi -show drun";
       "$fileManager" = "$terminal -e sh -c yazi";
 
-      cursor = {
-        no_hardware_cursors = "true";
-      };
+      cursor.no_hardware_cursors = "true";
 
-      input = {
-        kb_layout = "us";
-      };
+      input.kb_layout = "us";
 
-      gestures = {
-        workspace_swipe = "false";
-      };
+      gestures.workspace_swipe = "false";
 
       windowrulev2 = [
         "suppressevent maximize, class:.*"

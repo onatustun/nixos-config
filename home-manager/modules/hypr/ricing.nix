@@ -39,9 +39,7 @@
     };
 
 
-    animations = {
-    	enabled = false;
-    };
+    animations.enabled = false;
 
     misc = {
       force_default_wallpaper = 0;
