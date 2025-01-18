@@ -5,6 +5,7 @@
     ./ghostty.nix
     ./git.nix
     ./hypr
+    ./nvf.nix
     ./oh-my-posh.nix
     ./tmux.nix
     ./waybar.nix

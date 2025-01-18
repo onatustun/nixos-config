@@ -10,6 +10,8 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = { 
@@ -17,6 +19,7 @@
     nixpkgs, 
     home-manager, 
     zen-browser, 
+    nvf,
     ... 
   } @ inputs: let
     system = "x86_64-linux";
