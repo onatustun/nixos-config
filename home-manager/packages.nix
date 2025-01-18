@@ -15,9 +15,6 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
 
-    font-awesome
-    nerd-fonts.jetbrains-mono
-
     btop
     fzf
     pywal
