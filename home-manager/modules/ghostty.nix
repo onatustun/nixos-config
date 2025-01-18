@@ -1,4 +1,7 @@
-{ lib, ... }: {
+{ 
+  lib,
+  ... 
+}: {
   programs.ghostty = {
     enable = true;
 

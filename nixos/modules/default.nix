@@ -1,5 +1,5 @@
-{
-  imports = [
+{ 
+  imports = [ 
     ./audio.nix
     ./boot.nix
     ./hyprland.nix

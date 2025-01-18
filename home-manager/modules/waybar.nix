@@ -1,7 +1,9 @@
 {
   programs.waybar = {
     enable = true;
-    settings = [{
+
+    settings = [
+      {
         layer = "top";
 	position = "bottom";
 	height = 18;
@@ -41,6 +43,7 @@
 	temperature = {
 	  critical-threshold = 80;
 	  format = "[{icon} {temperatureC}°C]";
+
 	  format-icons = [
             "" 
             "" 
@@ -48,6 +51,7 @@
             ""
 	    ""
 	  ];
+
 	  tooltip = false;
 	};
 
@@ -57,8 +61,10 @@
 	    warning = 30;
 	    critical = 15;
 	  };
+
 	  format = "[{icon} {capacity}% {time}]";
 	  format-charging = "[ {capacity}% {time}]";
+
 	  format-icons = [
 	    ""
 	    ""
@@ -66,6 +72,7 @@
 	    ""
 	    ""
 	  ];
+
 	  tooltip = false;
 	};
 
@@ -79,9 +86,15 @@
 	pulseaudio = {
 	  format = "[{icon} {volume}%]";
 	  format-muted = "[MUTED]";
+
 	  format-icons = {
-	    "default" = ["" "" ""];
+	    "default" = [
+	      "" 
+	      "" 
+	      ""
+	    ];
 	  };
+
 	  on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 	  tooltip = false;
 	};
@@ -94,6 +107,7 @@
 
 	"hyprland/workspaces" = {
 	  format = "[{icon}]";
+
 	  format-icons = {
 	    "1" = "1";
 	    "2" = "2";
@@ -106,9 +120,11 @@
 	    "9" = "9";
 	    "10" = "10"; 
 	  };
+
 	  tooltip = false;
 	};
-    }];
+      }
+    ];
     
     style = ''
       * {

@@ -1,15 +1,26 @@
-{ config, pkgs, ... }:
-
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules
-    ];
+{ 
+  config,
+  pkgs,
+  ... 
+}: {
+  imports = [ 
+    ./hardware-configuration.nix
+    ./modules
+  ];
  
-  services.power-profiles-daemon.enable = true;
-  services.fwupd.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = [ pkgs.home-manager ];
+  nix.settings.experimental-features = [ 
+    "nix-command" 
+    "flakes" 
+  ];
+
+  environment.systemPackages = [ 
+    pkgs.home-manager 
+  ];
+
+  services = { 
+    power-profiles-daemon.enable = true;
+    fwupd.enable = true;
+  };
+
   system.stateVersion = "24.11";
 }

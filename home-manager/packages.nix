@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, system, ... }: {
+{ 
+  config,
+  pkgs,
+  inputs,
+  system,
+  ... 
+}: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [

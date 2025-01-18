@@ -1,25 +1,30 @@
-{ pkgs, user, ... }: {
+{ 
+  pkgs,
+  user,
+  ... 
+}: { 
   programs.zsh.enable = true;
 
-  users = {
+  users = { 
     defaultUserShell = pkgs.zsh;
 
-    users.onat = {
+    users.onat = { 
       isNormalUser = true;
-      extraGroups = [
+
+      extraGroups = [ 
         "networkmanager"
-	"wheel"
+        "wheel"
       ];
     };
   };
 
-  services.displayManager = {
-    sddm = {
+  services.displayManager = { 
+    sddm = { 
       enable = true;
       wayland.enable = true;
     };
 
-    autoLogin = {
+    autoLogin = { 
       enable = true;
       user = "onat";
     };

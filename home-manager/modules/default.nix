@@ -1,6 +1,6 @@
 {
   imports = [
-    ./cursor.nix
+    ./bibata.nix
     ./fastfetch.nix
     ./ghostty.nix
     ./git.nix

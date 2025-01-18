@@ -1,18 +1,22 @@
-{
-  services = {
-    keyd = {
+{ 
+  services = { 
+    keyd = { 
       enable = true;
-      keyboards = {
-        default = {
-	  ids = [ "*" ];
+        
+      keyboards = { 
+        default = { 
+	  ids = [
+	    "*" 
+	  ];
 
-	  settings = {
-	    main = {
+	  settings = { 
+	    main = { 
 	      capslock = "esc";
 	      esc = "capslock";
 	      alt = "overload(alt, alt)";
 	    };
-            alt = {
+
+            alt = { 
 	      d = "back";
 	      f = "forward";
 	      h = "left";
@@ -20,19 +24,23 @@
 	      k = "up";
 	      l = "right";
 	    };
-	  };
+          };
 	};
       };
     };
-    xserver = {
+
+    xserver = { 
       enable = true;
-      xkb = {
+
+      xkb = { 
         layout = "us";
-	variant = "";
+        variant = "";
       };
     };
+
     libinput.enable = true;
   };
+
   environment.etc."libinput/local-overrides.quirks".text = ''
     [Serial Keyboards]
     MatchUdevType=keyboard

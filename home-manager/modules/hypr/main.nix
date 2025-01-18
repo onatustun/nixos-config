@@ -4,7 +4,10 @@
 
     systemd = {
       enable = true;
-      variables = [ "--all" ];
+
+      variables = [ 
+        "--all"
+      ];
     };
 
     settings = {
@@ -14,8 +17,6 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
 	"QT_QPA_PLATFORM, wayland"
-	"XCURSOR_SIZE, 24"
-	"HYPRCURSOR_SIZE, 24"
       ];
 
       monitor = "eDP-1,2256x1504@60,0x0,1.175";
