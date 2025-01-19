@@ -7,27 +7,27 @@
 
       display = {
         size = {
-	  maxPrefix = "MB";
-	  ndigits = 0;
-	};
+	        maxPrefix = "MB";
+	        ndigits = 0;
+	      };
       };
 
       modules = [
         "title"
         "os"
         "host"
-	"bios"
+	      "bios"
         "kernel"
         "uptime"
-	"packages"
-	"cpu"
-	"swap"
-	"disk"
+	      "packages"
+	      "cpu"
+	      "swap"
+	      "disk"
         "display"
         "wm"
-	"brightness"
-	"shell"
-	"terminal"
+	      "brightness"
+	      "shell"
+	      "terminal"
         "colors"
       ];
     };
