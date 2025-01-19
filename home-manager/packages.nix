@@ -23,6 +23,7 @@
     fzf
     pywal
     pywalfox-native
+    ripgrep
     tree
     wl-clipboard
     yazi

@@ -19,6 +19,9 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
 
+    vimPlugins.plenary-nvim
+    ripgrep
+
     btop
     fzf
     pywal
