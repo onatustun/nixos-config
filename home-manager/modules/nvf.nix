@@ -28,9 +28,14 @@
 
         treesitter = {
           enable = true;
-          context.enable = true;
+          
+          context = {
+            enable = true;
+            setupOpts.separator = null;
+          };
         };
 
+        filetree.neo-tree.enable = true;
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
