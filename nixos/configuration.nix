@@ -13,11 +13,10 @@
     "flakes" 
   ];
 
-  
-
   environment = {
-    systemPackages = [ 
-      pkgs.home-manager 
+    systemPackages = with pkgs; [ 
+      home-manager
+      chromium
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";
