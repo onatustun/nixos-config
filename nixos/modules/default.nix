@@ -2,7 +2,6 @@
   imports = [ 
     ./audio.nix
     ./boot.nix
-    ./chromium.nix
     ./fonts.nix
     ./hyprland.nix
     ./input.nix
