@@ -1,7 +1,6 @@
 {
   imports = [
     ./bibata.nix
-    ./chromium.nix
     ./fastfetch.nix
     ./ghostty.nix
     ./git.nix
