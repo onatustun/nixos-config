@@ -19,7 +19,6 @@
 
     btop
     fzf
-    ollama
     pywal
     pywalfox-native
     ripgrep

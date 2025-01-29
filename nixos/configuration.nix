@@ -13,9 +13,15 @@
     "flakes" 
   ];
 
-  environment.systemPackages = [ 
-    pkgs.home-manager 
-  ];
+  
+
+  environment = {
+    systemPackages = [ 
+      pkgs.home-manager 
+    ];
+
+    sessionVariables.NIXOS_OZONE_WL = "1";
+  };
 
   system.stateVersion = "24.11";
 }

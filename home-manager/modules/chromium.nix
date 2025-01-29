@@ -1,3 +1,0 @@
-{
-  programs.chroium.enable = true;
-}
