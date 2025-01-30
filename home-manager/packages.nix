@@ -20,7 +20,6 @@
     btop
     fzf
     pywal
-    pywalfox-native
     ripgrep
     tree
     wl-clipboard
@@ -39,13 +38,10 @@
 
     brave
     inputs.zen-browser.packages."${system}".default
-    tor-browser
 
     bitwarden-desktop
     discord
     obs-studio
     obsidian
-    spotify
-    teams-for-linux
   ];
 }
