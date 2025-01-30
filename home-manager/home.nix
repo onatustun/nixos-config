@@ -13,7 +13,6 @@
   imports = [ 
     ./packages.nix
     ./modules
-    inputs.nur.modules.homeManager.default
   ];
 
   programs.home-manager.enable = true;

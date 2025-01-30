@@ -38,7 +38,7 @@
     vscode
 
     brave
-    inputs.zen-browser.packages."${system}".twilight
+    inputs.zen-browser.packages."${system}".default
     tor-browser
 
     bitwarden-desktop
