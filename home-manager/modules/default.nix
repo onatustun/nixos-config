@@ -2,7 +2,6 @@
   imports = [
     ./bibata.nix
     ./fastfetch.nix
-    ./firefox.nix
     ./ghostty.nix
     ./git.nix
     ./hypr
