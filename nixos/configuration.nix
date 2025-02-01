@@ -18,6 +18,7 @@
       home-manager
       nodejs
       nodePackages.pnpm
+      nodePackages.npm 
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";

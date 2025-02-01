@@ -49,6 +49,7 @@
         };
 
         ui = {
+          colorizer.enable = true;
           noice.enable = true;
           borders.enable = true;
         };
