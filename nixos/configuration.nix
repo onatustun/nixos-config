@@ -16,6 +16,8 @@
   environment = {
     systemPackages = with pkgs; [ 
       home-manager
+      nodejs
+      nodePackages.pnpm
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";

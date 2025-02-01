@@ -22,7 +22,6 @@
           markdown.enable = true;
           nix.enable = true;
           python.enable = true;
-          rust.enable = true;
           tailwind.enable = true;
         };
 
