@@ -23,6 +23,7 @@
           nix.enable = true;
           python.enable = true;
           tailwind.enable = true;
+          ts.enable = true;
         };
 
         options = {
