@@ -1,8 +1,12 @@
 {
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "onat" ];
+  users.extraGroups.vboxusers.members = [ "onat" "nixos" ];
   nixpkgs.config.allowUnfree = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
+  virtualisation = {
+    virtualbox = {
+      guest.enable = true;
+      host = {
+        enable = true; 
+      };
+    };
+  };
 }
