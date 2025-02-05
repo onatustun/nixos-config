@@ -11,5 +11,6 @@
     ./networking.nix
     ./ollama.nix
     ./user.nix
+    ./vmware.nix
   ];
 }
