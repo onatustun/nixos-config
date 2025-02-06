@@ -1,6 +1,5 @@
 { 
   pkgs,
-  user,
   ... 
 }: { 
   programs.zsh.enable = true;
@@ -23,6 +22,11 @@
       sddm = { 
         enable = true;
         wayland.enable = true;
+      };
+
+      autoLogin = {
+        enable = true;
+        user = "onat";
       };
     };
 
