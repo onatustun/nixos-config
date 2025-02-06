@@ -1,4 +1,14 @@
 {
   services.xserver.videoDrivers = [ "vmware" ];
-  virtualisation.vmware.guest.enable = true;
+  users.groups.libvirtd.members = ["onat"];
+
+  virtualisation = {
+    spiceUSBRedirection.enable = true;
+    libvirtd.enable = true;
+
+    vmware = {
+      host.enable = true;
+      guest.enable = true;
+    };
+  };
 }

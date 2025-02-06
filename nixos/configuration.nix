@@ -20,6 +20,9 @@
       nodePackages.pnpm
       nodePackages.npm 
       vmware-workstation
+      virtualbox
+      quickemu
+      qemu
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";
