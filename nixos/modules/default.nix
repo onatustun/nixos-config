@@ -10,7 +10,7 @@
     ./locale.nix
     ./networking.nix
     ./ollama.nix
+    ./qemu.nix
     ./user.nix
-    ./virt.nix
   ];
 }
