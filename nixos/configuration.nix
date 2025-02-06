@@ -19,6 +19,7 @@
       nodejs
       nodePackages.pnpm
       nodePackages.npm 
+      vmware-workstation
     ];
 
     sessionVariables.NIXOS_OZONE_WL = "1";
