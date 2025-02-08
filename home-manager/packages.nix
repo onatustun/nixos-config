@@ -16,6 +16,7 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
 
+    bat
     btop
     fzf
     pywal

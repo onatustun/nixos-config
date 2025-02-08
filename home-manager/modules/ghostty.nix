@@ -1,6 +1,9 @@
 {
   programs.ghostty = {
     enable = true;
+    enableZshIntegration = true;
+    installBatSyntax = true;
+    installVimSyntax = true;
 
     settings = {
       confirm-close-surface = false;

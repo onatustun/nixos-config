@@ -3,22 +3,26 @@
     enable = true;
 
     settings = {
-      anchor = "top";
-      width = "100%";
-      height = 30;
+      anchor = "bottom";
+      background-color = "#282828";
+      text-color = "#665c53";
+      font = "JetBrainsMono Nerd Font";
+      font-size = 10;
       horizontal = true;
-      font-size = 14;
-      prompt-text = " run: ";
-      font = "monospace";
       outline-width = 0;
       border-width = 0;
-      background-color = "#000000";
-      min-input-width = 120;
+      height = 23; 
+      prompt-text = "❯ ";
+      prompt-padding = 15;
       result-spacing = 15;
       padding-top = 0;
       padding-bottom = 0;
       padding-left = 0;
       padding-right = 0;
+      width = "30%";
+      input-color = "#d5c4a1";
+      selection-color = "#d5c4a1";
+      selection-match-color = "#d5c4a1";
     };
   };
 }

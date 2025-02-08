@@ -13,6 +13,7 @@
       ls = "ls -a -l --color";
       ff = "fastfetch";
       c = "clear";
+      cat = "bat";
     };
 
     history.ignoreAllDups = true;
