@@ -29,7 +29,5 @@
         user = "onat";
       };
     };
-
-    xserver.enable = true;
   };
 }

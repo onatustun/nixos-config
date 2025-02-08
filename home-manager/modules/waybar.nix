@@ -4,14 +4,13 @@
 
     settings = [
       {
-        height = 26;
+        height = 16;
 	      position = "bottom";
         layer = "top";
 	      reload_style_on_change = true;
 
 	      modules-left = [
 	        "hyprland/workspaces"
-	        "network"
 	      ];
 
 	      modules-right = [
@@ -19,36 +18,47 @@
 	        "memory"
 	        "temperature"
 	        "pulseaudio"
+	        "network"
 	        "battery"
 	        "clock"
 	        "custom/power"
 	      ];
 
 	      "hyprland/workspaces" = {
-	        format = "[{icon}]";
+	        format = "{icon}";
 	        tooltip = false;
 	      };
 
         network = {
-	        format-wifi = "[  {ifname}:{ipaddr}/{cidr} {essid} ({signalStrength}%)]";
-	        format-disconnected = "[Disconnected]";
+          format-wifi = "{icon} ";
+          format-icons = [
+            "󰣾"
+            "󰣴"
+            "󰣶"
+            "󰣸"
+            "󰣺"
+          ];
+	        format-disconnected = "󰣼 ";
           interval = 5;
-	        tooltip = false;
+	        tooltip = true;
+          tooltip-format = "{ifname}:{ipaddr}/{cidr} {essid} ({signalStrength}%)";
 	      };
 
 	      cpu = {
-	        format = "[ {usage}%]";
-	        tooltip = false;
+	        format = "󰻠";
+	        tooltip = true;
+          tooltip-formmat = "{usage}%";
 	      };
 
 	      memory = {
-	        format = "[ {used:0.1f}G/{total:0.1f}G]";
-	        tooltip = false;
+	        format = "󰍛";
+	        tooltip = true;
+          tooltip-format = "{percentage}%";
 	      };
 
-	      temperature = {
+        temperature = {
 	        critical-threshold = 80;
-	        format = "[{icon} {temperatureC}°C]";
+	        format = "{icon}";
 
 	        format-icons = [
             "" 
@@ -58,23 +68,23 @@
 	          ""
 	        ];
 
-	        tooltip = false;
-	      };
+          tooltip = true;
+          tooltip-format = "{temperatureC}°C";
+        };
 
 	      pulseaudio = {
-	        format = "[{icon} {volume}%]";
-	        format-muted = "[MUTED]";
+	        format = "{icon}";
+	        format-muted = "󰸈";
+          tooltip-format = "{volume}%";
 
-	        format-icons = {
-	          "default" = [
-	            "" 
-	            "" 
-	            ""
-	          ];
-	        };
+	        format-icons = [
+	          "󰕿" 
+	          "󰖀" 
+	          "󰕾"
+          ];
 
-	        on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-	        tooltip = false;
+	        on-click = "pavucontrol";
+	        tooltip = true;
 	      };
 
         battery = {
@@ -84,28 +94,38 @@
 	          critical = 15;
 	        };
 
-	        format = "[{icon} {capacity}% {time}]";
-	        format-charging = "[ {capacity}% {time}]";
+	        format = "{icon} {capacity}%";
+	        format-charging = "󰚥 {capacity}% {time}";
+          tooltip-format = "{time}";
 
 	        format-icons = [
-	          ""
-	          ""
-	          ""
-	          ""
-	          ""
+	          "󰂎"
+	          "󰁻"
+	          "󰁼"
+	          "󰁽"
+	          "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
 	        ];
 
-	        tooltip = false;
+	        tooltip = true;
 	      };
 
         clock = {
-	        format = "[ {:%H:%M %a %d/%m}]";
+	        format = "{:%H:%M}";
 	        interval = 1;
-          tooltip = false;
+          tooltip = true;
+          tooltip-format = "{:%a %d/%m}";
 	      };
 
         "custom/power" = {
-	        format = "[󰐦]";
+	        format = "{icon} ";
+          format-icons = [
+	          "󰐥"
+          ];
 	        tooltip = false;
 	        on-click = "wlogout --protocol layer-shell";
 	      };
@@ -144,7 +164,7 @@
       #cpu,
       #memory,
       #temperature,
-      #pulseaudio,
+      #wireplumber,
       #battery,
       #clock,
       #custom-power {

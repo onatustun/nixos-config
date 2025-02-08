@@ -3,29 +3,27 @@
     keyd = { 
       enable = true;
         
-      keyboards = { 
-        default = {
-	        ids = [
-	          "*" 
-	        ];
+      keyboards.default = {
+	      ids = [
+	        "*" 
+	      ];
 
-	        settings = { 
-	          main = { 
-	            capslock = "esc";
-	            esc = "capslock";
-	            alt = "overload(alt, alt)";
-	          };
+	      settings = { 
+	        main = { 
+	          capslock = "esc";
+	          esc = "capslock";
+	          alt = "overload(alt, alt)";
+	        };
 
-            alt = { 
-	            d = "back";
-	            f = "forward";
-	            h = "left";
-	            j = "down";
-	            k = "up";
-	            l = "right";
-	          };
-          };
-	      };
+          alt = { 
+	          d = "back";
+	          f = "forward";
+	          h = "left";
+	          j = "down";
+	          k = "up";
+	          l = "right";
+	        };
+        };
       };
     };
 

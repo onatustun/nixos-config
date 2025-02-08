@@ -22,13 +22,11 @@
       monitor = "eDP-1,2256x1504@60,0x0,1.175667";
 
       "$terminal" = "ghostty";
-      "$menu" = "rofi -show drun";
+      "$menu" = "tofi-drun";
       "$fileManager" = "$terminal -e sh -c yazi";
 
       cursor.no_hardware_cursors = "true";
-
       input.kb_layout = "us";
-
       gestures.workspace_swipe = "false";
 
       windowrulev2 = [

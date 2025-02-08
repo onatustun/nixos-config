@@ -1,9 +1,4 @@
-{ config,
-  pkgs,
-  system,
-  inputs,
-  ... 
-}: { 
+{ 
   home = { 
     username = "onat";
     homeDirectory = "/home/onat";

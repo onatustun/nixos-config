@@ -5,11 +5,9 @@
     settings = {
       logo.source = "nixos";
 
-      display = {
-        size = {
-	        maxPrefix = "MB";
-	        ndigits = 0;
-	      };
+      display.size = {
+	      maxPrefix = "MB";
+	      ndigits = 0;
       };
 
       modules = [

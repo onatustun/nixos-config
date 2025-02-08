@@ -1,15 +1,14 @@
 { 
-  config,
   pkgs,
   inputs,
   system,
   ... 
 }: {
-  nixpkgs.config.allowUnfree = true;
-
   imports = [
     inputs.nvf.homeManagerModules.default
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     brightnessctl
@@ -32,7 +31,6 @@
     imv
     mpv
     pavucontrol
-    rofi
 
     vscode
 

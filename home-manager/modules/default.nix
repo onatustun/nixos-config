@@ -8,6 +8,7 @@
     ./nvf.nix
     ./oh-my-posh.nix
     ./tmux.nix
+    ./tofi.nix
     ./waybar.nix
     ./wlogout
     ./zsh.nix 

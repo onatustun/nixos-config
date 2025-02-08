@@ -1,12 +1,7 @@
 {
-  config,
   pkgs,
-  inputs,
-  system,
   ...
 }: {
-  nixpkgs.config.allowUnfree = true;
- 
   fonts = {
     fontDir.enable = true;
     fontconfig.enable = true;
