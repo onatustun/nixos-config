@@ -4,7 +4,7 @@
 
     settings = [
       {
-        height = 16;
+        height = 24;
 	      position = "bottom";
         layer = "top";
 	      reload_style_on_change = true;
