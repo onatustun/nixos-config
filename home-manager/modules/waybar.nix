@@ -4,7 +4,6 @@
 
     settings = [
       {
-        height = 24;
 	      position = "bottom";
         layer = "top";
 	      reload_style_on_change = true;
@@ -30,28 +29,30 @@
 	      };
 
         network = {
-          format-wifi = "{icon} ";
+          format-wifi = "{icon}";
+
           format-icons = [
-            "󰣾"
-            "󰣴"
-            "󰣶"
-            "󰣸"
-            "󰣺"
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
           ];
-	        format-disconnected = "󰣼 ";
+
+	        format-disconnected = "󰤮";
           interval = 5;
 	        tooltip = true;
           tooltip-format = "{ifname}:{ipaddr}/{cidr} {essid} ({signalStrength}%)";
 	      };
 
 	      cpu = {
-	        format = "󰻠";
+	        format = "";
 	        tooltip = true;
           tooltip-formmat = "{usage}%";
 	      };
 
 	      memory = {
-	        format = "󰍛";
+	        format = "";
 	        tooltip = true;
           tooltip-format = "{percentage}%";
 	      };
@@ -74,42 +75,37 @@
 
 	      pulseaudio = {
 	        format = "{icon}";
-	        format-muted = "󰸈";
+	        format-muted = "";
           tooltip-format = "{volume}%";
 
 	        format-icons = [
-	          "󰕿" 
-	          "󰖀" 
-	          "󰕾"
+	          "" 
+	          "" 
+	          ""
           ];
 
-	        on-click = "pavucontrol";
+	        on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 	        tooltip = true;
 	      };
 
         battery = {
 	        states = {
 	          good = 85;
-	          warning = 30;
-	          critical = 15;
+	          warning = 40;
+	          critical = 25;
 	        };
 
-	        format = "{icon} {capacity}%";
-	        format-charging = "󰚥 {capacity}% {time}";
-          tooltip-format = "{time}";
+	        format = "{icon}";
+	        format-charging = "󰚥";
+          tooltip-format = "{capacity}% {time}";
 
 	        format-icons = [
-	          "󰂎"
-	          "󰁻"
-	          "󰁼"
-	          "󰁽"
-	          "󰁾"
-            "󰁿"
-            "󰂀"
-            "󰂁"
-            "󰂂"
-            "󰁹"
-	        ];
+	          ""
+	          ""
+	          ""
+	          ""
+	          ""
+          ];
 
 	        tooltip = true;
 	      };
@@ -123,9 +119,11 @@
 
         "custom/power" = {
 	        format = "{icon} ";
+
           format-icons = [
 	          "󰐥"
           ];
+
 	        tooltip = false;
 	        on-click = "wlogout --protocol layer-shell";
 	      };
@@ -139,8 +137,8 @@
       }
 
       window#waybar {
-        color: #665c54;
-        background-color: #282828;
+        color: #928374;
+        background-color: #1d2021;
       }
 
       #window {
@@ -148,7 +146,7 @@
       }
 
       #workspaces button {
-        padding: 0 2px;
+        padding: 0 3px;
         margin: 0px;
         background: transparent;
         font-weight: bold;
@@ -156,7 +154,7 @@
       }
 
       #workspaces button.active {
-        color: #d5c4a1;
+        color: #ebdbb2;
       }
 
       #hyprland-workspaces,
@@ -164,12 +162,12 @@
       #cpu,
       #memory,
       #temperature,
-      #wireplumber,
+      #pulseaudio,
       #battery,
       #clock,
       #custom-power {
         padding: 0 3px;
-        margin: 0 2px;
+        margin: 0 9px;
       }
 
       modules-left > widget:first-child > #workspaces {
@@ -178,6 +176,18 @@
 
       .modules-right > widget:last-child > #workspaces {
         margin-right: 0;
+      }
+
+      #network.disabled, 
+      #network.disconnected,
+      #temperature.critical,
+      #pulseaudio.muted,
+      #battery.critical {
+        color: #cc241d;
+      }
+
+      #battery.warning {
+        color: #d65d0e;
       }
     '';
   };
