@@ -118,7 +118,7 @@
 	      };
 
         "custom/power" = {
-	        format = "{icon} ";
+	        format = "{icon}";
 
           format-icons = [
 	          "󰐥"
@@ -176,6 +176,10 @@
 
       .modules-right > widget:last-child > #workspaces {
         margin-right: 0;
+      }
+
+      #custom-power {
+        padding: 0 9px 0 0;
       }
 
       #network.disabled, 
