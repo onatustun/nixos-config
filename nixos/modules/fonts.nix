@@ -8,9 +8,10 @@
 
     packages = with pkgs; [
       font-awesome
+      nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.noto
-      nerd-fonts.fira-code
+      nerd-fonts.symbols-only
     ];
   };
 }
