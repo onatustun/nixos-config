@@ -4,7 +4,7 @@
 
     settings = {
       anchor = "bottom";
-      background-color = "#282828";
+      background-color = "#1d2021";
       text-color = "#665c53";
       font = "JetBrainsMono Nerd Font";
       font-size = 10;
