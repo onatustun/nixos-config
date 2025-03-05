@@ -18,6 +18,8 @@
   };
 
   services = {
+    desktopManager.plasma6.enable = true;
+
     displayManager = { 
       sddm = { 
         enable = true;
@@ -25,7 +27,7 @@
       };
 
       autoLogin = {
-        enable = true;
+        enable = false;
         user = "onat";
       };
     };

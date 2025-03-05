@@ -5,9 +5,7 @@
     bind = [
       "$mainMod, Q, exec, $terminal"
       "$mainMod, R, exec, $menu"
-      "$mainMod, E, exec, $fileManager"
       "$mainMod, C, killactive"
-      "$mainMod, M, exit"
       "$mainMod, U, togglesplit"
 
       "$mainMod, H, movefocus, l"

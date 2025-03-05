@@ -1,7 +1,6 @@
 { 
   pkgs,
   inputs,
-  system,
   ... 
 }: {
   imports = [
@@ -34,9 +33,6 @@
     pavucontrol
 
     vscode
-
-    brave
-    inputs.zen-browser.packages."${system}".default
 
     bitwarden-desktop
     discord

@@ -6,7 +6,7 @@
       {
 	      position = "bottom";
         layer = "top";
-        height = 24;
+        height = 30;
 	      reload_style_on_change = true;
 
 	      modules-left = [
