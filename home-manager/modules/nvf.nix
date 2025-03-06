@@ -12,15 +12,13 @@
         enableLSP = true;
         enableTreesitter = true;
 
-        bash.enable = true;
         clang.enable = true;
         csharp.enable = true;
         css.enable = true;
         html.enable = true;
-        lua.enable = true;
+        java.enable = true;
         markdown.enable = true;
         nix.enable = true;
-        python.enable = true;
         tailwind.enable = true;
         ts.enable = true;
       };
@@ -49,7 +47,6 @@
       };
 
       ui = {
-        colorizer.enable = true;
         noice.enable = true;
         borders.enable = true;
       };

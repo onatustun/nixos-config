@@ -2,140 +2,123 @@
   programs.waybar = {
     enable = true;
 
-    settings = [
-      {
-	      position = "bottom";
-        layer = "top";
-        height = 30;
-	      reload_style_on_change = true;
+    settings = [{
+	    position = "bottom";
+      layer = "top";
+      height = 30;
+	    reload_style_on_change = true;
 
-	      modules-left = [
-	        "hyprland/workspaces"
+	    modules-left = [
+	      "hyprland/workspaces"
+	    ];
+
+	    modules-right = [
+	      "cpu"
+	      "memory"
+	      "temperature"
+	      "pulseaudio"
+	      "network"
+	      "battery"
+	      "clock"
+	    ];
+
+	    "hyprland/workspaces" = {
+	      format = "{icon}";
+	      tooltip = false;
+	    };
+
+	    cpu = {
+	      format = "";
+	      tooltip = true;
+        tooltip-formmat = "{usage}%";
+	    };
+
+	    memory = {
+	      format = "";
+	      tooltip = true;
+        tooltip-format = "{percentage}%";
+	    };
+
+      temperature = {
+	      critical-threshold = 80;
+	      format = "{icon}";
+        tooltip = true;
+        tooltip-format = "{temperatureC}°C";
+
+	      format-icons = [
+          "" 
+          "" 
+	        ""
+          ""
+	        ""
 	      ];
+      };
 
-	      modules-right = [
-	        "cpu"
-	        "memory"
-	        "temperature"
-	        "pulseaudio"
-	        "network"
-	        "battery"
-	        "clock"
-	        "custom/power"
-	      ];
+	    pulseaudio = {
+	      format = "{icon}";
+	      format-muted = "";
+	      tooltip = true;
+        tooltip-format = "{volume}%";
+	      on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
-	      "hyprland/workspaces" = {
-	        format = "{icon}";
-	        tooltip = false;
+	      format-icons = [
+	        "" 
+	        "" 
+	        ""
+        ];
+	    };
+
+      network = {
+        format-wifi = "{icon}";
+	      format-disconnected = "󰤮";
+        interval = 5;
+	      tooltip = true;
+        tooltip-format = "{ifname}:{ipaddr}/{cidr} {essid} ({signalStrength}%)";
+
+        format-icons = [
+          "󰤯"
+          "󰤟"
+          "󰤢"
+          "󰤥"
+          "󰤨"
+        ];
+	    };
+
+      battery = {
+        format = "{icon}";
+	      format-charging = "󰚥";
+	      tooltip = true;
+        tooltip-format = "{capacity}% {time}";
+
+	      states = {
+	        good = 85;
+	        warning = 40;
+	        critical = 25;
 	      };
+	      
+	      format-icons = [
+	        ""
+	        ""
+	        ""
+	        ""
+	        ""
+        ];
+	    };
 
-        network = {
-          format-wifi = "{icon}";
-
-          format-icons = [
-            "󰤯"
-            "󰤟"
-            "󰤢"
-            "󰤥"
-            "󰤨"
-          ];
-
-	        format-disconnected = "󰤮";
-          interval = 5;
-	        tooltip = true;
-          tooltip-format = "{ifname}:{ipaddr}/{cidr} {essid} ({signalStrength}%)";
-	      };
-
-	      cpu = {
-	        format = "";
-	        tooltip = true;
-          tooltip-formmat = "{usage}%";
-	      };
-
-	      memory = {
-	        format = "";
-	        tooltip = true;
-          tooltip-format = "{percentage}%";
-	      };
-
-        temperature = {
-	        critical-threshold = 80;
-	        format = "{icon}";
-
-	        format-icons = [
-            "" 
-            "" 
-	          ""
-            ""
-	          ""
-	        ];
-
-          tooltip = true;
-          tooltip-format = "{temperatureC}°C";
-        };
-
-	      pulseaudio = {
-	        format = "{icon}";
-	        format-muted = "";
-          tooltip-format = "{volume}%";
-
-	        format-icons = [
-	          "" 
-	          "" 
-	          ""
-          ];
-
-	        on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-	        tooltip = true;
-	      };
-
-        battery = {
-	        states = {
-	          good = 85;
-	          warning = 40;
-	          critical = 25;
-	        };
-
-	        format = "{icon}";
-	        format-charging = "󰚥";
-          tooltip-format = "{capacity}% {time}";
-
-	        format-icons = [
-	          ""
-	          ""
-	          ""
-	          ""
-	          ""
-          ];
-
-	        tooltip = true;
-	      };
-
-        clock = {
-	        format = "{:%H:%M}";
-	        interval = 1;
-          tooltip = true;
-          tooltip-format = "{:%a %d/%m}";
-	      };
-
-        "custom/power" = {
-	        format = "{icon}";
-
-          format-icons = [
-	          "󰐥"
-          ];
-
-	        tooltip = false;
-	        on-click = "wlogout --protocol layer-shell";
-	      };
-      }
-    ];
+      clock = {
+	      format = "{:%H:%M}";
+	      interval = 1;
+        tooltip = true;
+        tooltip-format = "{:%a %d/%m}";
+	    };
+    }];
     
     style = ''
       * {
         font-family:JetBrainsMono Nerd Font;
         font-size:12px;
         font-weight: bold;
+        border: none;
       }
 
       window#waybar {
@@ -149,14 +132,9 @@
       #pulseaudio,
       #network,
       #battery,
-      #clock,
-      #custom-power {
+      #clock {
         margin: 0 10px;
         padding: 0.5px;
-      }
-
-      #custom-power {
-        margin: 0 18px 0 10px;
       }
 
       #workspaces button {

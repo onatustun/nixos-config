@@ -1,6 +1,5 @@
 {
   imports = [
-    ./bibata.nix
     ./chromium.nix
     ./fastfetch.nix
     ./ghostty.nix
@@ -11,7 +10,6 @@
     ./tmux.nix
     ./tofi.nix
     ./waybar.nix
-    ./wlogout
     ./zsh.nix 
   ];
 }
