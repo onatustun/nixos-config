@@ -8,6 +8,5 @@
     ./pipewire.nix
     ./power-profiles.nix
     ./user.nix
-    ./vmware.nix
   ];
 }
