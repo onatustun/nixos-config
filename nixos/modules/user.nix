@@ -2,7 +2,15 @@
   pkgs,
   ... 
 }: { 
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      withUWSM = true;
+    };
+  };
 
   users = { 
     defaultUserShell = pkgs.zsh;

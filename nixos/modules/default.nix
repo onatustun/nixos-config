@@ -1,15 +1,12 @@
 { 
-  imports = [ 
-    ./audio.nix
-    ./bluetooth.nix
+  imports = [
+    ./blueman.nix
     ./boot.nix
     ./fonts.nix
-    ./hyprland.nix
-    ./input.nix
-    ./laptop-hardware.nix
-    ./locale.nix
+    ./localisation.nix
     ./networking.nix
-    ./ollama.nix
+    ./pipewire.nix
+    ./power-profiles.nix
     ./user.nix
     ./vmware.nix
   ];
