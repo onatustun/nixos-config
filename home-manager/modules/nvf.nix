@@ -19,8 +19,22 @@
         java.enable = true;
         markdown.enable = true;
         nix.enable = true;
+        nu.enable = true;
+        rust.enable = true;
         tailwind.enable = true;
         ts.enable = true;
+      };
+
+      lsp = {
+        formatOnSave = true;
+        lspkind.enable = false;
+        lightbulb.enable = true;
+        lspsaga.enable = false;
+        trouble.enable = true;
+        lspSignature.enable = true;
+        otter-nvim.enable = true;
+        lsplines.enable = true;
+        nvim-docs-view.enable = true;
       };
 
       options = {
@@ -47,6 +61,7 @@
       };
 
       ui = {
+        colorizer.enable = true;
         noice.enable = true;
         borders.enable = true;
       };
@@ -57,6 +72,18 @@
         indent-blankline.enable = true;
         nvim-scrollbar.enable = true;
         nvim-web-devicons.enable = true;
+      };
+
+      utility = {
+        motion = {
+          hop.enable = true;
+          leap.enable = true;
+          precognition.enable = true;
+        };
+
+        images = {
+          image-nvim.enable = false;
+        };
       };
           
       autocomplete.nvim-cmp.enable = true;

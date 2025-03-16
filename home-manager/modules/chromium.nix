@@ -7,8 +7,9 @@
     package = pkgs.brave;
 
     extensions = [
-      /* Bitwarden */ { id = "nngceckbapebfimnlniiiahkandclblb"; }
       /* Privacy Badger */ { id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"; }
+      /* Proton Pass */ { id = "ghmbeldphafepmbegfdlkpapadhbakde"; }
+      /* Proton VPN */ { id = "jplgfhpmjnbigmhklmmbgecoobifkmpa"; }
       /* SponsorBlock */ { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; }
       /* Vimium */ { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; }
       /* Violentmonkey */ { id = "jinjaccalgkegednnccohejagnlnfdag"; }
