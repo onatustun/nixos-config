@@ -25,18 +25,6 @@
         ts.enable = true;
       };
 
-      lsp = {
-        formatOnSave = true;
-        lspkind.enable = false;
-        lightbulb.enable = true;
-        lspsaga.enable = false;
-        trouble.enable = true;
-        lspSignature.enable = true;
-        otter-nvim.enable = true;
-        lsplines.enable = true;
-        nvim-docs-view.enable = true;
-      };
-
       options = {
         shiftwidth = 2;
         tabstop = 2;
@@ -61,7 +49,6 @@
       };
 
       ui = {
-        colorizer.enable = true;
         noice.enable = true;
         borders.enable = true;
       };
@@ -74,18 +61,7 @@
         nvim-web-devicons.enable = true;
       };
 
-      utility = {
-        motion = {
-          hop.enable = true;
-          leap.enable = true;
-          precognition.enable = true;
-        };
-
-        images = {
-          image-nvim.enable = false;
-        };
-      };
-          
+      lsp.formatOnSave = true;
       autocomplete.nvim-cmp.enable = true;
       autopairs.nvim-autopairs.enable = true;
       dashboard.alpha.enable = true;

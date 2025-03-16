@@ -4,7 +4,6 @@
     ./fastfetch.nix
     ./ghostty.nix
     ./git.nix
-    ./helix.nix
     ./hypr
     ./nvf.nix
     ./oh-my-posh.nix
