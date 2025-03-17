@@ -1,14 +1,10 @@
 {
   description = "flake config";
 
-  nixConfig = {
-    experimental-features = [
-      "flakes"
-      "nix-command"
-    ];
-  };
-
-  nixpkgs.config.allowUnfree = true;
+  nixConfig.experimental-features = [
+    "flakes"
+    "nix-command"
+  ];
 
   inputs = { 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -36,10 +32,17 @@
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
+    sharedPkgs = import {
+      inherit system;
+      config.allowUnfree = true; 
+    };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+        
       specialArgs = { 
-        inherit inputs outputs;
+        inherit inputs outputs self;
+        sharedPkgs = sharedPkgs;
       };
 
       modules = [ 
@@ -48,13 +51,15 @@
     };
 
     homeConfigurations.onat = inputs.home-manager.lib.homeManagerConfiguration { 
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = sharedPkgs;
 
       extraSpecialArgs = { 
         inherit inputs outputs self;
+        sharedPkgs = sharedPkgs;
       };
 
       modules = [ 
+        { home-manager.useGlobalPkgs = true; }
         ./home-manager/home.nix
       ];
     };
