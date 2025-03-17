@@ -1,6 +1,15 @@
 {
   description = "flake config";
 
+  nixConfig = {
+    experimental-features = [
+      "flakes"
+      "nix-command"
+    ];
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
   inputs = { 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
@@ -34,7 +43,7 @@
       };
 
       modules = [ 
-        ./hosts/laptop/configuration.nix
+        ./hosts/laptop
       ];	
     };
 
