@@ -12,14 +12,10 @@
         enableLSP = true;
         enableTreesitter = true;
 
-        clang.enable = true;
-        csharp.enable = true;
         css.enable = true;
         html.enable = true;
-        java.enable = true;
         markdown.enable = true;
         nix.enable = true;
-        nu.enable = true;
         rust.enable = true;
         tailwind.enable = true;
         ts.enable = true;
@@ -61,12 +57,12 @@
         nvim-web-devicons.enable = true;
       };
 
-      lsp.formatOnSave = true;
       autocomplete.nvim-cmp.enable = true;
       autopairs.nvim-autopairs.enable = true;
       dashboard.alpha.enable = true;
       filetree.neo-tree.enable = true;
       git.enable = true;
+      lsp.formatOnSave = true;
       spellcheck.enable = true;
       statusline.lualine.enable = true;
       telescope.enable = true;

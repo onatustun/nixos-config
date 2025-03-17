@@ -7,13 +7,17 @@
     package = pkgs.brave;
 
     extensions = [
-      /* Privacy Badger */ { id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"; }
-      /* Proton Pass */ { id = "ghmbeldphafepmbegfdlkpapadhbakde"; }
-      /* Proton VPN */ { id = "jplgfhpmjnbigmhklmmbgecoobifkmpa"; }
-      /* SponsorBlock */ { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; }
-      /* Vimium */ { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; }
-      /* Violentmonkey */ { id = "jinjaccalgkegednnccohejagnlnfdag"; }
-      /* uBlock Origin */ { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
+      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # Vimium
+      { id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # Proton Pass
+      { id = "jinjaccalgkegednnccohejagnlnfdag"; } # Violentmonkey
+      { id = "jplgfhpmjnbigmhklmmbgecoobifkmpa"; } # Proton VPN
+      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; } # SponsorBlock
+      { id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"; } # Privacy Badger
+    ];
+
+    commandLineArgs = [
+      "--password-store=basic"
     ];
   };
 }

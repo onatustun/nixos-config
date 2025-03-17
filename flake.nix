@@ -2,44 +2,47 @@
   description = "flake config";
 
   inputs = { 
-    home-manager = { 
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nvf.url = "github:notashelf/nvf";
+    
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { 
     self, 
-    home-manager, 
     nixpkgs, 
-    nur,
-    nvf,
     ... 
   } @ inputs: let
+    inherit (self) outputs;
     system = "x86_64-linux";
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
+      specialArgs = { 
+        inherit inputs outputs;
+      };
 
       modules = [ 
-        ./nixos/configuration.nix 
+        ./hosts/laptop/configuration.nix
       ];	
     };
 
-    homeConfigurations.onat = home-manager.lib.homeManagerConfiguration { 
+    homeConfigurations.onat = inputs.home-manager.lib.homeManagerConfiguration { 
       pkgs = nixpkgs.legacyPackages.${system};
 
       extraSpecialArgs = { 
-        inherit inputs system;
+        inherit inputs outputs self;
       };
 
       modules = [ 
