@@ -4,17 +4,44 @@
 }: {
   imports = [ 
     ./hardware-configuration.nix
-    ./modules
   ];
 
-  nix.settings.experimental-features = [
-    "flakes"
-    "nix-command"
-  ];
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+  };
+
+  boot.loader.systemd-boot.enable = true;
+
+  security.rtkit.enable = true;
+
+  fonts = {
+    fontDir.enable = true;
+    fontconfig.enable = true;
+
+    packages = with pkgs; [
+      font-awesome
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
+    ];
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     home-manager
 
+    git
     vim
     wget
 
@@ -35,7 +62,7 @@
   ];
 
   programs = {
-    fish.enable = true;
+    zsh.enable = true;
 
     hyprland = {
       enable = true;
@@ -45,7 +72,7 @@
   };
 
   users = {
-    defaultUserShell = pkgs.fish;
+    defaultUserShell = pkgs.zsh;
 
     users.onat = {
       isNormalUser = true;
@@ -58,14 +85,41 @@
   };
 
   services = {
+    blueman.enable = true;
+    power-profiles-daemon.enable = true;
     desktopManager.plasma6.enable = true;
 
     displayManager.sddm = {
       enable = true;
       wayland.enable = true;
     };
+
+    pipewire = {
+        enable = true;
+        pulse.enable = true;
+        alsa = {
+          enable = true;
+          support32Bit = true;
+        };
+      };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  time.timeZone = "Europe/London";
+  
+  il8n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = { 
+       LC_ADDRESS = "en_GB.UTF-8";
+       LC_IDENTIFICATION = "en_GB.UTF-8";
+       LC_MEASUREMENT = "en_GB.UTF-8";
+       LC_MONETARY = "en_GB.UTF-8";
+       LC_NAME = "en_GB.UTF-8";
+       LC_NUMERIC = "en_GB.UTF-8";
+       LC_PAPER = "en_GB.UTF-8";
+       LC_TELEPHONE = "en_GB.UTF-8";
+       LC_TIME = "en_GB.UTF-8";
+     };
+  };
+
   system.stateVersion = "24.11";
 }

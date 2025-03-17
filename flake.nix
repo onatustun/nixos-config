@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +18,8 @@
   outputs = { 
     self, 
     nixpkgs, 
+    home-manager,
+    nvf,
     ... 
   } @ inputs: let
     inherit (self) outputs;
@@ -34,7 +31,7 @@
       };
 
       modules = [ 
-        ./hosts/laptop
+        ./hosts
       ];	
     };
 
@@ -42,11 +39,11 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       extraSpecialArgs = { 
-        inherit inputs outputs self;
+        inherit inputs outputs;
       };
 
       modules = [ 
-        ./home-manager/home.nix
+        ./home/home.nix
       ];
     };
   };
