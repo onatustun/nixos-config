@@ -7,8 +7,35 @@
     ./modules
   ];
 
+  nix.settings.experimental-features = [
+    "flakes"
+    "nix-command"
+  ];
+
+  environment.systemPackages = with pkgs; [
+    home-manager
+
+    vim
+    wget
+
+    nodejs
+    nodePackages.npm
+    nodePackages.pnpm
+
+    cargo
+    cargo-expand
+    cargo-fuzz
+    clang
+    clippy
+    gcc
+    rust-analyzer
+    rustc
+    rustfmt
+    rustup
+  ];
+
   programs = {
-    zsh.enable = true;
+    fish.enable = true;
 
     hyprland = {
       enable = true;
@@ -18,7 +45,7 @@
   };
 
   users = {
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.fish;
 
     users.onat = {
       isNormalUser = true;
@@ -39,5 +66,6 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.11";
 }
