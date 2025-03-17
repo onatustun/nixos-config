@@ -43,7 +43,7 @@
       };
 
       modules = [ 
-        ./home/home.nix
+        ./home
       ];
     };
   };

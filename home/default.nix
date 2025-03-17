@@ -19,7 +19,7 @@
   ];
 
   home = {
-    usename = "onat";
+    username = "onat";
     homeDirectory = "/home/onat";
     stateVersion = "24.11";
 

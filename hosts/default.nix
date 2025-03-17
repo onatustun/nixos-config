@@ -3,7 +3,7 @@
     ./laptop
   ];
 
-  nix.settings.expeprimental-features = [
+  nix.settings.experimental-features = [
     "flakes"
     "nix-command"
   ];

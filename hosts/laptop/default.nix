@@ -106,7 +106,7 @@
 
   time.timeZone = "Europe/London";
   
-  il8n = {
+  i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = { 
        LC_ADDRESS = "en_GB.UTF-8";
