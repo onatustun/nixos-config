@@ -1,6 +1,7 @@
 {
   imports = [
     ./laptop
+    ./common
   ];
 
   nix.settings.experimental-features = [
