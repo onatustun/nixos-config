@@ -1,5 +1,8 @@
 {
   pkgs,
+  hostname,
+  stateVersion,
+  user,
   ...
 }: {
   imports = [
@@ -8,7 +11,7 @@
   ];
 
   networking = {
-    hostName = "nixos";
+    hostName = hostname;
     networkmanager.enable = true;
   };
 
@@ -23,11 +26,9 @@
   programs.zsh.enable = true;
 
   users = {
-    defaultUserShell = with pkgs; [
-      zsh
-    ];
+    defaultUserShell = pkgs.zsh;
 
-    users.onat = {
+    users.${user} = {
       isNormalUser = true;
 
       extraGroups = [
@@ -37,5 +38,5 @@
     };
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = stateVersion;
 }

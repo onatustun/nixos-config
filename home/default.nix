@@ -1,6 +1,8 @@
 {
   pkgs,
   inputs,
+  user,
+  stateVersion,
   ...
 }: {
   imports = [
@@ -9,9 +11,9 @@
   ];
 
   home = {
-    username = "onat";
+    username = user;
     homeDirectory = "/home/onat";
-    stateVersion = "24.11";
+    stateVersion = stateVersion;
 
     packages = with pkgs; [
       brightnessctl
@@ -36,11 +38,6 @@
       mpv
       pavucontrol
 
-      vscode
-
-      bitwarden-desktop
-      discord
-      obs-studio
       obsidian
     ];
   };

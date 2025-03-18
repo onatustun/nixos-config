@@ -9,7 +9,7 @@
     packages = with pkgs; [
       font-awesome
       nerd-fonts.jetbrains-mono
-      nerd-4onts.symbols-only
+      nerd-fonts.symbols-only
     ];
   };
 }

@@ -24,10 +24,16 @@
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
+    homeStateVersion = "24.11";
+    user = "onat";
+    hosts = [{
+      hostname = "laptop";
+      stateVersion = "24.11";
+    }];
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { 
-        inherit inputs outputs;
+        inherit inputs outputs system homeStateVersion user hosts;
       };
 
       modules = [ 
@@ -39,7 +45,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       extraSpecialArgs = { 
-        inherit inputs outputs;
+        inherit inputs outputs system homeStateVersion user hosts;
       };
 
       modules = [ 
