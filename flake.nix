@@ -2,7 +2,9 @@
   description = "flake config";
 
   inputs = { 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -24,16 +26,10 @@
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
-    homeStateVersion = "24.11";
-    user = "onat";
-    hosts = [{
-      hostname = "laptop";
-      stateVersion = "24.11";
-    }];
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { 
-        inherit inputs outputs system homeStateVersion user hosts;
+        inherit inputs outputs;
       };
 
       modules = [ 
@@ -45,7 +41,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       extraSpecialArgs = { 
-        inherit inputs outputs system homeStateVersion user hosts;
+        inherit inputs outputs;
       };
 
       modules = [ 

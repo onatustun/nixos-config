@@ -1,8 +1,6 @@
 {
   pkgs,
   inputs,
-  user,
-  stateVersion,
   ...
 }: {
   imports = [
@@ -11,9 +9,9 @@
   ];
 
   home = {
-    username = user;
+    username = "onat";
     homeDirectory = "/home/onat";
-    stateVersion = stateVersion;
+    stateVersion = "24.11";
 
     packages = with pkgs; [
       brightnessctl

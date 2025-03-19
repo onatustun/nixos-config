@@ -1,8 +1,5 @@
 {
   pkgs,
-  hostname,
-  stateVersion,
-  user,
   ...
 }: {
   imports = [
@@ -11,12 +8,9 @@
   ];
 
   networking = {
-    hostName = hostname;
+    hostName = "nixos";
     networkmanager.enable = true;
   };
-
-  boot.loader.systemd-boot.enable = true;
-  services.power-profiles-daemon.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -28,7 +22,7 @@
   users = {
     defaultUserShell = pkgs.zsh;
 
-    users.${user} = {
+    users.onat = {
       isNormalUser = true;
 
       extraGroups = [
@@ -38,5 +32,8 @@
     };
   };
 
-  system.stateVersion = stateVersion;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  boot.loader.systemd-boot.enable = true;
+  services.power-profiles-daemon.enable = true;
+  system.stateVersion = "24.11";
 }

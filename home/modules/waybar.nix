@@ -17,6 +17,7 @@
 	      "memory"
 	      "temperature"
 	      "pulseaudio"
+        "bluetooth"
 	      "network"
 	      "battery"
 	      "clock"
@@ -68,6 +69,31 @@
         ];
 	    };
 
+      bluetooth = {
+        format = "󰂯";
+        format-on = "󰂯";
+        format-connected = "󰂯";
+        format-connected-battery = "{icon}";
+        format-disabled = "󰂲";
+        format-off = "󰂲";
+        tooltip = true;
+        tooltip-format-connected-battery = "{device_alias} {status} {device_battery_percentage}%";
+        tooltip-format = "{device_alias} {status}";
+
+        format-icons = [
+          "󰤾"
+          "󰤿"
+          "󰥀"
+          "󰥁"
+          "󰥂"
+          "󰥃"
+          "󰥄"
+          "󰥅"
+          "󰥆"
+          "󰥈"
+        ];
+      };
+
       network = {
         format-wifi = "{icon}";
 	      format-disconnected = "󰤮";
@@ -92,8 +118,8 @@
 
 	      states = {
 	        good = 85;
-	        warning = 40;
-	        critical = 25;
+	        warning = 60;
+	        critical = 40;
 	      };
 	      
 	      format-icons = [
@@ -132,7 +158,8 @@
       #pulseaudio,
       #network,
       #battery,
-      #clock {
+      #clock,
+      #bluetooth {
         margin: 0 10px;
         padding: 0.5px;
       }
@@ -151,13 +178,24 @@
       #network.disabled, 
       #network.disconnected,
       #pulseaudio.muted,
-      #temperature.critical {
+      #temperature.critical
+      #bluetooth.disabled,
+      #bluetooth.off,
+      #bluetooth.no-controlelr {
         color: #cc241d;
       }
 
       #battery.charging,
       #battery.warning {
         color: #d65d0e;
+      }
+
+      #bluetooth.on,
+      #bluetooth.connected,
+      #bluetooth.discoverable,
+      #bluetooth.discovering,
+      #bluetooth.pairable {
+        color: #458588;
       }
     '';
   };

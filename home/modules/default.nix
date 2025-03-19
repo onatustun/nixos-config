@@ -1,6 +1,7 @@
 {
   imports = [
     ./chromium.nix
+    ./environment.nix
     ./fastfetch.nix
     ./ghostty.nix
     ./git.nix

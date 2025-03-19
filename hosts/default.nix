@@ -1,9 +1,6 @@
 {
-  hosts,
-  ...
-}: {
   imports = [
-    ./${hosts.hostname}
+    ./laptop
     ./common
   ];
 
