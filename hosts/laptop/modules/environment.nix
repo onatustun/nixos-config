@@ -5,12 +5,6 @@
   programs.dconf.enable = true;
 
   environment = {
-    systemPackages = with pkgs; [
-      gnomeExtensions.tactile
-      gnomeExtensions.blur-my-shell
-      gnome-tweaks
-    ];
-
     gnome.excludePackages = with pkgs; [
       atomix # puzzle game
       cheese # webcam tool
@@ -30,14 +24,24 @@
       gnome-console
       xterm
     ];
+
+    systemPackages = with pkgs; [
+      gnomeExtensions.tactile
+      gnomeExtensions.arcmenu
+      gnomeExtensions.space-bar
+      dconf2nix
+    ];
   };
 
   services = {
     xserver = {
       enable = true;
       desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = true;
+
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
   };
 
