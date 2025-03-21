@@ -2,8 +2,6 @@
   pkgs,
   ...
 }: {
-  programs.dconf.enable = true;
-
   environment = {
     gnome.excludePackages = with pkgs; [
       atomix # puzzle game
@@ -26,10 +24,15 @@
     ];
 
     systemPackages = with pkgs; [
-      gnomeExtensions.tactile
+      gnomeExtensions.forge
       gnomeExtensions.arcmenu
+      gnomeExtensions.dynamic-panel
+      gnomeExtensions.vitals
       gnomeExtensions.space-bar
+      gnomeExtensions.blur-my-shell
       dconf2nix
+      dconf-editor
+      xdg-desktop-portal-gnome
     ];
   };
 

@@ -9,6 +9,8 @@
       confirm-close-surface = false;
       font-family = "JetBrainsMono Nerd Font";
       font-size = 12;
+      maximize = true;
+      gtk-titlebar = false;
       mouse-hide-while-typing = true;
       shell-integration-features = "no-cursor";
       theme = "GruvboxDark";
