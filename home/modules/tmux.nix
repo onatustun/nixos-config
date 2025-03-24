@@ -8,7 +8,7 @@
     keyMode = "vi";
 
     extraConfig = ''
-      set -g prefix M-w
+      set -g prefix C-s
 
       bind-key h select-pane -L
       bind-key j select-pane -D

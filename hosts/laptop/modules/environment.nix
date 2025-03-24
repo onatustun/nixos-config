@@ -24,12 +24,16 @@
     ];
 
     systemPackages = with pkgs; [
-      gnomeExtensions.forge
+      gnomeExtensions.appindicator
       gnomeExtensions.arcmenu
-      gnomeExtensions.dynamic-panel
-      gnomeExtensions.vitals
-      gnomeExtensions.space-bar
+      gnomeExtensions.paperwm
       gnomeExtensions.blur-my-shell
+      gnomeExtensions.gsconnect
+      gnomeExtensions.just-perfection
+      gnomeExtensions.space-bar
+      gnomeExtensions.bluetooth-battery
+      gnomeExtensions.vitals
+      gnomeExtensions.dash-to-panel
       dconf2nix
       dconf-editor
       xdg-desktop-portal-gnome
@@ -39,7 +43,14 @@
   services = {
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
+      desktopManager.gnome = {
+        enable = true;
+        extraGSettingsOverridePackages = [ pkgs.mutter ];
+        extraGSettingsOverrides = ''
+          [org.gnome.mutter]
+          experimental-features=['scale-monitor-framebuffer']
+        '';
+      };
 
       displayManager.gdm = {
         enable = true;
