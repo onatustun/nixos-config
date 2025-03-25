@@ -20,13 +20,15 @@
       fzf
       ripgrep
       tree
-      yazi
-      zoxide
       obsidian
     ];
   };
 
+  programs = {
+    home-manager.enable = true;
+    zoxide.enable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
-  programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 }

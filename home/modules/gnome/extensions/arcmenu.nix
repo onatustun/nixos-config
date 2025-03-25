@@ -3,6 +3,7 @@
   ... 
 }: with lib.hm.gvariant; {
   dconf.settings."org/gnome/shell/extensions/arcmenu" = {
+    arcmenu-hotkey = ["<Super>D"];
     highlight-search-result-terms = false;
     menu-layout = "Runner";
     multi-monitor = false;

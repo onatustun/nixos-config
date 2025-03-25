@@ -1,13 +1,13 @@
 {
   imports = [
-    ./chromium.nix
-    ./fastfetch.nix
+    ./brave.nix
+    ./ff.nix
     ./ghostty.nix
     ./git.nix
     ./gnome
     ./nvf.nix
-    ./oh-my-posh.nix
+    ./omp.nix
     ./tmux.nix
-    ./zsh.nix 
+    ./zsh.nix
   ];
 }

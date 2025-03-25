@@ -4,8 +4,6 @@
   ... 
 }: {
   dconf.settings = {
-    "org/gnome/shell/extensions/arc".arcmenu-hotkey = ["<Super>D"];
-   
     "org/gnome/shell/extensions/paperwm/keybindings" = {
       close-window = ["<Super>C"];
 
