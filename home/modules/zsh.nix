@@ -10,7 +10,7 @@
     in {
       rebuild = "sudo nixos-rebuild switch --flake ${flakePath}";
       hms = "home-manager switch --flake ${flakePath}";
-      ls = "ls -a -l --color";
+      ls = "ls -la --color";
       ff = "fastfetch";
       c = "clear";
       cat = "bat";
